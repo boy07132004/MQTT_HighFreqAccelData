@@ -1,4 +1,4 @@
-# DualESP32_with_MPU9250
+# MQTT_HighFreqAccelData
 
 Stably get the 1KHz accelerometer data by MQTT.
 
@@ -45,4 +45,4 @@ Stably get the 1KHz accelerometer data by MQTT.
 </table>
 
 ## Why use two ESP32
-I tried to read sensor data and publish to MQTT broker in different cores, but the sensor data reading is still affected when another core was publishing. So, I use two ESP32 to avoid latency during data read. When the ESP32_sensor collects a package of data in core 0, it will transmit the package by UART in core 1, finally, the ESP32_MQTT will publish this package without any impact of reading on ESP32_sensor.
+I tried to read sensor data and publish to MQTT broker in different cores, but the sensor data reading is still affected when another core was publishing. So, I use two ESP32 to avoid latency during data read. When the ESP32_sensor collects a package of data in core 0, it will transmit the package by UART to core 1. Finally, the ESP32_MQTT will publish this package without any impact of reading on ESP32_sensor.
