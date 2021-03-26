@@ -76,7 +76,7 @@ void Task1code(void* pvParameters){
 
   while (true){
     for(count=0;count<DATA_PER_PKG;count++){
-        while (micros()-time_< (pow10(6)/FREQ);
+        while (micros()-time_< (pow10(6)/FREQ));
         time_ = micros();
 
         digitalWrite(SS_PIN,LOW);
